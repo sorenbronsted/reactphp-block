@@ -129,13 +129,13 @@ function await(PromiseInterface $promise, LoopInterface $loop = null, $timeout =
         function ($c) use (&$resolved, &$wait, $loop) {
             $resolved = $c;
             $wait = false;
-            $loop->stop();
+            //$loop->stop();
         },
         function ($error) use (&$exception, &$rejected, &$wait, $loop) {
             $exception = $error;
             $rejected = true;
             $wait = false;
-            $loop->stop();
+            //$loop->stop();
         }
     );
 
